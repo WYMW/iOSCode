@@ -21,7 +21,14 @@ class ConOperation: Operation, URLSessionDelegate, URLSessionDownloadDelegate {
     var execut = false
     var finish = false
     var readystatus = true
+    var downloadFolderPath:String?
+    var downloadUrl:String
     
+    init(downloadUrl:String) {
+        
+        self.downloadUrl = downloadUrl
+        super.init()
+    }
     
     override func start() {
      
@@ -57,7 +64,8 @@ class ConOperation: Operation, URLSessionDelegate, URLSessionDownloadDelegate {
         self.willChangeValue(forKey: "isExecuting")
         execut = true
         self.didChangeValue(forKey: "isExecuting")
-        self.downLoadPicture(url: "http://img.mp.itc.cn/upload/20161228/50deee6d98604dae83d2aa066c4e0705_th.jpg")
+       // self.downloadUrl = "https://rhl-ota.b0.upaiyun.com/app/rhl/ios/20161207/HotomatoChest.ipa"
+        self.downLoadPicture(url:self.downloadUrl)
         self.complete()
         
     }
@@ -88,14 +96,6 @@ class ConOperation: Operation, URLSessionDelegate, URLSessionDownloadDelegate {
         }
     }
     
-    override var isReady: Bool {
-      
-        get {
-         
-            return false
-        }
-    }
-    
     override var isAsynchronous: Bool {
       
         get {
@@ -117,21 +117,34 @@ class ConOperation: Operation, URLSessionDelegate, URLSessionDownloadDelegate {
     }
     
     
+    
     func downLoadPicture(url:String) {
         
         let sessionConfig = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfig, delegate: self,  delegateQueue: nil)
         let fileName = url.components(separatedBy: "/").last
-        let url = URL(string:url)
-        let sessionDownloadTask = session.downloadTask(with: url!)
+        print("url = \(url)");
+        let finalUrl = URL(string:url)
+        let sessionDownloadTask = session.downloadTask(with: finalUrl!)
         
         sessionDownloadTask.resume()
     }
     
     //Download Delegate
      func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+        if self.downloadFolderPath == nil {
+            self.downloadFolderPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last
+        }
+        let fileManager = FileManager.default;
+        let finalFilePath = self.downloadFolderPath!.appending("/\(self.downloadUrl!.components(separatedBy: "/").last!)")
+        do {
         
-        print("URL = \(location)")
+            try fileManager.moveItem(at: location, to: URL(fileURLWithPath:finalFilePath))
+            
+        }catch {
+        
+        }
+        
         
         
     }

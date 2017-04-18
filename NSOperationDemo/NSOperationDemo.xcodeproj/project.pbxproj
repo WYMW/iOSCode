@@ -15,6 +15,8 @@
 		4C5701F61E08D74A0029C000 /* NSOperationDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5701F51E08D74A0029C000 /* NSOperationDemoTests.swift */; };
 		4C5702011E08D74A0029C000 /* NSOperationDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5702001E08D74A0029C000 /* NSOperationDemoUITests.swift */; };
 		4C57020F1E08D8240029C000 /* ConOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C57020E1E08D8240029C000 /* ConOperation.swift */; };
+		4CE3A7271E272AAD00EA4997 /* DownloadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3A7251E272AAD00EA4997 /* DownloadCell.swift */; };
+		4CE3A7281E272AAD00EA4997 /* DownloadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE3A7261E272AAD00EA4997 /* DownloadCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		4C5702001E08D74A0029C000 /* NSOperationDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOperationDemoUITests.swift; sourceTree = "<group>"; };
 		4C5702021E08D74A0029C000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C57020E1E08D8240029C000 /* ConOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConOperation.swift; sourceTree = "<group>"; };
+		4CE3A7251E272AAD00EA4997 /* DownloadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadCell.swift; sourceTree = "<group>"; };
+		4CE3A7261E272AAD00EA4997 /* DownloadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				4C5701E91E08D74A0029C000 /* LaunchScreen.storyboard */,
 				4C5701EC1E08D74A0029C000 /* Info.plist */,
 				4C57020E1E08D8240029C000 /* ConOperation.swift */,
+				4CE3A7251E272AAD00EA4997 /* DownloadCell.swift */,
+				4CE3A7261E272AAD00EA4997 /* DownloadCell.xib */,
 			);
 			path = NSOperationDemo;
 			sourceTree = "<group>";
@@ -239,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C5701EB1E08D74A0029C000 /* LaunchScreen.storyboard in Resources */,
+				4CE3A7281E272AAD00EA4997 /* DownloadCell.xib in Resources */,
 				4C5701E81E08D74A0029C000 /* Assets.xcassets in Resources */,
 				4C5701E61E08D74A0029C000 /* Main.storyboard in Resources */,
 			);
@@ -266,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C5701E31E08D74A0029C000 /* ViewController.swift in Sources */,
+				4CE3A7271E272AAD00EA4997 /* DownloadCell.swift in Sources */,
 				4C57020F1E08D8240029C000 /* ConOperation.swift in Sources */,
 				4C5701E11E08D74A0029C000 /* AppDelegate.swift in Sources */,
 			);
@@ -518,6 +526,7 @@
 				4C5702071E08D74A0029C000 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C5702081E08D74A0029C000 /* Build configuration list for PBXNativeTarget "NSOperationDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +535,7 @@
 				4C57020A1E08D74A0029C000 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C57020B1E08D74A0029C000 /* Build configuration list for PBXNativeTarget "NSOperationDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +544,7 @@
 				4C57020D1E08D74A0029C000 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
